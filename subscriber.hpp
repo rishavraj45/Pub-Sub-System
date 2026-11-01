@@ -7,12 +7,14 @@
 
 class Subscriber : public ISubscriber {
 private:
-    std::string id;
-    std::string name;
-    std::vector<Message> messageQueue;
-    bool active;
+    // subscriber's datas
+    std::string id;                    //subscriber's unique id
+    std::string name;                  // subscriber's name
+    std::vector<Message> messageQueue;      //list of messages this subscriber got
+    bool active;                      // subscriber active or not
 
 public:
+    // Constructor subscriber banate waqt uski ID aur naam leta hai.
     Subscriber(const std::string& id, const std::string& name);
 
     std::string getId() const;
