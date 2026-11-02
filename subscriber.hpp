@@ -20,13 +20,19 @@ public:
     std::string getId() const;
     std::string getName() const;
     bool isActive() const;
+    //const ka matlab ye functions stored data ko change nahi karte.
 
     void receiveMessage(const Message& message) override;
 
-    void displayMessages() const;
-    void clearMessages();
-    void setActive(bool status);
-    void displayInfo() const;
+    void displayMessages() const;             //stored messages dikhata hai
+    void clearMessages();                     //message list ko empty karta hai
+    void setActive(bool status);              //subscriber ko active ya inactive karta hai
+    void displayInfo() const;                 //subscriber ki details dikhata hai.
 };
 
 #endif
+
+
+/*
+Overall flow: Topic message bhejta hai → subscriber ka receiveMessage() call hota hai → message uski queue mein store hota hai → displayMessages() se baad mein dekha ja sakta hai.
+*/
